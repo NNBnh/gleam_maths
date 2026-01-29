@@ -1,26 +1,25 @@
-////<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
-////<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
-////<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"></script>
-////<script>
-////    document.addEventListener("DOMContentLoaded", function() {
-////        renderMathInElement(document.body, {
-////          // customised options
-////          // • auto-render specific keys, e.g.:
-////          delimiters: [
-////              {left: '$$', right: '$$', display: false},
-////              {left: '$', right: '$', display: false},
-////              {left: '\\(', right: '\\)', display: false},
-////              {left: '\\[', right: '\\]', display: true}
-////          ],
-////          // • rendering keys, e.g.:
-////          throwOnError : true
-////        });
-////    });
-////</script>
-////<style>
-////    .katex { font-size: 1.10em; }
-////</style>
-////
+//// <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
+//// <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
+//// <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"></script>
+//// <script>
+////     document.addEventListener("DOMContentLoaded", function() {
+////         renderMathInElement(document.body, {
+////           // customised options
+////           // • auto-render specific keys, e.g.:
+////           delimiters: [
+////               {left: '$$', right: '$$', display: false},
+////               {left: '$', right: '$', display: false},
+////               {left: '\\(', right: '\\)', display: false},
+////               {left: '\\[', right: '\\]', display: true}
+////           ],
+////           // • rendering keys, e.g.:
+////           throwOnError : true
+////         });
+////     });
+//// </script>
+//// <style>
+////     .katex { font-size: 1.10em; }
+//// </style>
 
 import gleam/bool
 import gleam/float
@@ -30,12 +29,6 @@ import gleam/order
 import gleam/set
 import gleam/yielder.{type Yielder}
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The function calculates the greatest common divisor of two integers
 /// \\(x, y \in \mathbb{Z}\\). The greatest common divisor is the largest positive
 /// integer that is divisible by both \\(x\\) and \\(y\\).
@@ -58,12 +51,6 @@ import gleam/yielder.{type Yielder}
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn gcd(x: Int, y: Int) -> Int {
   let absx = int.absolute_value(x)
   let absy = int.absolute_value(y)
@@ -78,13 +65,6 @@ fn do_gcd(x: Int, y: Int) -> Int {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
-///
 /// Given two integers, \\(x\\) (dividend) and \\(y\\) (divisor), the Euclidean modulo
 /// of \\(x\\) by \\(y\\), denoted as \\(x \mod y\\), is the remainder \\(r\\) of the
 /// division of \\(x\\) by \\(y\\), such that:
@@ -116,12 +96,6 @@ fn do_gcd(x: Int, y: Int) -> Int {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn euclidean_modulo(x: Int, y: Int) -> Int {
   case x % y, x, y {
     _, 0, _ -> 0
@@ -131,12 +105,6 @@ pub fn euclidean_modulo(x: Int, y: Int) -> Int {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The function calculates the least common multiple of two integers
 /// \\(x, y \in \mathbb{Z}\\). The least common multiple is the smallest positive
 /// integer that has both \\(x\\) and \\(y\\) as factors.
@@ -159,12 +127,6 @@ pub fn euclidean_modulo(x: Int, y: Int) -> Int {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn lcm(x: Int, y: Int) -> Int {
   let absx = int.absolute_value(x)
   let absy = int.absolute_value(y)
@@ -172,12 +134,6 @@ pub fn lcm(x: Int, y: Int) -> Int {
   absx * absy / do_gcd(absx, absy)
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The function returns all the positive divisors of an integer, including the
 /// number itself.
 ///
@@ -198,12 +154,6 @@ pub fn lcm(x: Int, y: Int) -> Int {
 ///       |> should.equal([1, 13])
 ///     }
 /// </details>
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn divisors(n: Int) -> List(Int) {
   find_divisors(n)
@@ -237,12 +187,6 @@ fn do_find_divisors(n: Int, max: Int, acc: set.Set(Int), i: Int) -> set.Set(Int)
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The function returns all the positive divisors of an integer, excluding the
 /// number itself.
 ///
@@ -264,12 +208,6 @@ fn do_find_divisors(n: Int, max: Int, acc: set.Set(Int), i: Int) -> set.Set(Int)
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn proper_divisors(n: Int) -> List(Int) {
   find_divisors(n)
   |> set.delete(n)
@@ -277,12 +215,6 @@ pub fn proper_divisors(n: Int) -> List(Int) {
   |> list.sort(int.compare)
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the weighted sum of the elements in a list:
 ///
 /// \\[
@@ -315,12 +247,6 @@ pub fn proper_divisors(n: Int) -> List(Int) {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn weighted_sum(arr: List(#(Float, Float))) -> Result(Float, Nil) {
   case arr {
     [] -> Ok(0.0)
@@ -335,12 +261,6 @@ pub fn weighted_sum(arr: List(#(Float, Float))) -> Result(Float, Nil) {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the weighted product of the elements in a list:
 ///
 /// \\[
@@ -377,12 +297,6 @@ pub fn weighted_sum(arr: List(#(Float, Float))) -> Result(Float, Nil) {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn weighted_product(arr: List(#(Float, Float))) -> Result(Float, Nil) {
   case arr {
     [] -> Ok(1.0)
@@ -401,12 +315,6 @@ pub fn weighted_product(arr: List(#(Float, Float))) -> Result(Float, Nil) {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the cumulative sum of the elements in a list:
 ///
 /// \\[
@@ -435,12 +343,6 @@ pub fn weighted_product(arr: List(#(Float, Float))) -> Result(Float, Nil) {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn cumulative_sum(arr: List(Float)) -> List(Float) {
   case arr {
     [] -> []
@@ -448,12 +350,6 @@ pub fn cumulative_sum(arr: List(Float)) -> List(Float) {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the cumulative sum of the elements in a list:
 ///
 /// \\[
@@ -482,12 +378,6 @@ pub fn cumulative_sum(arr: List(Float)) -> List(Float) {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn int_cumulative_sum(arr: List(Int)) -> List(Int) {
   case arr {
     [] -> []
@@ -495,12 +385,6 @@ pub fn int_cumulative_sum(arr: List(Int)) -> List(Int) {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the cumulative product of the elements in a list:
 ///
 /// \\[
@@ -530,12 +414,6 @@ pub fn int_cumulative_sum(arr: List(Int)) -> List(Int) {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn cumulative_product(arr: List(Float)) -> List(Float) {
   case arr {
     [] -> []
@@ -543,12 +421,6 @@ pub fn cumulative_product(arr: List(Float)) -> List(Float) {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the cumulative product of the elements in a list:
 ///
 /// \\[
@@ -578,12 +450,6 @@ pub fn cumulative_product(arr: List(Float)) -> List(Float) {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn int_cumulative_product(arr: List(Int)) -> List(Int) {
   case arr {
     [] -> []
@@ -591,12 +457,6 @@ pub fn int_cumulative_product(arr: List(Int)) -> List(Int) {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Convert a value in degrees to a value measured in radians.
 /// That is, \\(1 \text{ degrees } = \frac{\pi}{180} \text{ radians }\\).
 ///
@@ -612,22 +472,10 @@ pub fn int_cumulative_product(arr: List(Int)) -> List(Int) {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn degrees_to_radians(x: Float) -> Float {
   x *. do_pi() /. 180.0
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Convert a value in radians to a value measured in degrees.
 /// That is, \\(1 \text{ radians } = \frac{180}{\pi} \text{ degrees }\\).
 ///
@@ -646,22 +494,10 @@ pub fn degrees_to_radians(x: Float) -> Float {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn radians_to_degrees(x: Float) -> Float {
   x *. 180.0 /. do_pi()
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Converts polar coordinates \\((r, \theta)\\) to Cartesian coordinates \\((x, y)\\).
 ///
 /// <details>
@@ -679,12 +515,6 @@ pub fn radians_to_degrees(x: Float) -> Float {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn polar_to_cartesian(r: Float, theta: Float) -> #(Float, Float) {
   // Calculate x and y
   let x = r *. cos(theta)
@@ -693,12 +523,6 @@ pub fn polar_to_cartesian(r: Float, theta: Float) -> #(Float, Float) {
   #(x, y)
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Converts Cartesian coordinates \\((x, y)\\) to polar coordinates \\((r, \theta)\\).
 ///
 /// <details>
@@ -716,12 +540,6 @@ pub fn polar_to_cartesian(r: Float, theta: Float) -> #(Float, Float) {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn cartesian_to_polar(x: Float, y: Float) -> #(Float, Float) {
   // Calculate 'r' and 'theta'
   // Usage of let assert: a sum of squares is always non-negative so no error
@@ -733,12 +551,6 @@ pub fn cartesian_to_polar(x: Float, y: Float) -> #(Float, Float) {
   #(r, theta)
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The inverse cosine function:
 ///
 /// \\[
@@ -768,12 +580,6 @@ pub fn cartesian_to_polar(x: Float, y: Float) -> #(Float, Float) {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn acos(x: Float) -> Result(Float, Nil) {
   case x >=. -1.0 && x <=. 1.0 {
     True -> Ok(do_acos(x))
@@ -785,12 +591,6 @@ pub fn acos(x: Float) -> Result(Float, Nil) {
 @external(javascript, "../maths.mjs", "acos")
 fn do_acos(a: Float) -> Float
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The inverse hyperbolic cosine function:
 ///
 /// \\[
@@ -816,12 +616,6 @@ fn do_acos(a: Float) -> Float
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn acosh(x: Float) -> Result(Float, Nil) {
   case x >=. 1.0 {
     True -> Ok(do_acosh(x))
@@ -833,12 +627,6 @@ pub fn acosh(x: Float) -> Result(Float, Nil) {
 @external(javascript, "../maths.mjs", "acosh")
 fn do_acosh(a: Float) -> Float
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The inverse sine function:
 ///
 /// \\[
@@ -867,12 +655,6 @@ fn do_acosh(a: Float) -> Float
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn asin(x: Float) -> Result(Float, Nil) {
   case x >=. -1.0 && x <=. 1.0 {
     True -> Ok(do_asin(x))
@@ -884,12 +666,6 @@ pub fn asin(x: Float) -> Result(Float, Nil) {
 @external(javascript, "../maths.mjs", "asin")
 fn do_asin(a: Float) -> Float
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The inverse hyperbolic sine function:
 ///
 /// \\[
@@ -912,12 +688,6 @@ fn do_asin(a: Float) -> Float
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn asinh(x: Float) -> Float {
   do_asinh(x)
 }
@@ -926,12 +696,6 @@ pub fn asinh(x: Float) -> Float {
 @external(javascript, "../maths.mjs", "asinh")
 fn do_asinh(a: Float) -> Float
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The inverse tangent function:
 ///
 /// \\[
@@ -954,12 +718,6 @@ fn do_asinh(a: Float) -> Float
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn atan(x: Float) -> Float {
   do_atan(x)
 }
@@ -968,12 +726,6 @@ pub fn atan(x: Float) -> Float {
 @external(javascript, "../maths.mjs", "atan")
 fn do_atan(a: Float) -> Float
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The inverse 2-argument tangent function:
 ///
 /// \\[
@@ -1005,12 +757,6 @@ fn do_atan(a: Float) -> Float
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn atan2(y: Float, x: Float) -> Float {
   do_atan2(y, x)
 }
@@ -1019,12 +765,6 @@ pub fn atan2(y: Float, x: Float) -> Float {
 @external(javascript, "../maths.mjs", "atan2")
 fn do_atan2(a: Float, b: Float) -> Float
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The inverse hyperbolic tangent function:
 ///
 /// \\[
@@ -1053,12 +793,6 @@ fn do_atan2(a: Float, b: Float) -> Float
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn atanh(x: Float) -> Result(Float, Nil) {
   case x >. -1.0 && x <. 1.0 {
     True -> Ok(do_atanh(x))
@@ -1070,12 +804,6 @@ pub fn atanh(x: Float) -> Result(Float, Nil) {
 @external(javascript, "../maths.mjs", "atanh")
 fn do_atanh(a: Float) -> Float
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The cosine function:
 ///
 /// \\[
@@ -1100,12 +828,6 @@ fn do_atanh(a: Float) -> Float
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn cos(x: Float) -> Float {
   do_cos(x)
 }
@@ -1114,12 +836,6 @@ pub fn cos(x: Float) -> Float {
 @external(javascript, "../maths.mjs", "cos")
 fn do_cos(a: Float) -> Float
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The hyperbolic cosine function:
 ///
 /// \\[
@@ -1142,12 +858,6 @@ fn do_cos(a: Float) -> Float
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn cosh(x: Float) -> Float {
   do_cosh(x)
 }
@@ -1156,12 +866,6 @@ pub fn cosh(x: Float) -> Float {
 @external(javascript, "../maths.mjs", "cosh")
 fn do_cosh(a: Float) -> Float
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The sine function:
 ///
 /// \\[
@@ -1186,12 +890,6 @@ fn do_cosh(a: Float) -> Float
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn sin(x: Float) -> Float {
   do_sin(x)
 }
@@ -1200,12 +898,6 @@ pub fn sin(x: Float) -> Float {
 @external(javascript, "../maths.mjs", "sin")
 fn do_sin(a: Float) -> Float
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The hyperbolic sine function:
 ///
 /// \\[
@@ -1213,7 +905,7 @@ fn do_sin(a: Float) -> Float
 /// \\]
 ///
 /// The function takes a number \\(x\\) in its domain \\(\(-\infty, +\infty\)\\) as input
-/// and returns a numeric value \\(y\\) that lies in the range \\(\(-\infty, +\infty\)\\). 
+/// and returns a numeric value \\(y\\) that lies in the range \\(\(-\infty, +\infty\)\\).
 /// If the input value is too large an overflow error might occur.
 ///
 /// <details>
@@ -1228,12 +920,6 @@ fn do_sin(a: Float) -> Float
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn sinh(x: Float) -> Float {
   do_sinh(x)
 }
@@ -1242,20 +928,14 @@ pub fn sinh(x: Float) -> Float {
 @external(javascript, "../maths.mjs", "sinh")
 fn do_sinh(a: Float) -> Float
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The tangent function:
 ///
 /// \\[
-/// \forall x \in \(-\infty, +\infty\) \setminus \\{\frac{\pi}{2} + k \cdot \pi \mid k \in 
+/// \forall x \in \(-\infty, +\infty\) \setminus \\{\frac{\pi}{2} + k \cdot \pi \mid k \in
 /// \mathbb{Z}\\}, \quad \tan(x) = y \in (-\infty, +\infty)
 /// \\]
 ///
-/// The function takes a number \\(x\\) (an angle in radians) as input, provided that 
+/// The function takes a number \\(x\\) (an angle in radians) as input, provided that
 /// \\(\cos(x) \neq 0\\), since \\(\tan(x) = \frac{\sin(x)}{\cos(x)}\\). It returns
 /// a numeric value \\(y\\) that lies in the range \\(\(-\infty, +\infty\)\\).
 ///
@@ -1268,17 +948,11 @@ fn do_sinh(a: Float) -> Float
 ///     pub fn example() {
 ///       maths.tan(0.0)
 ///       |> should.equal(0.0)
-/// 
+///
 ///       maths.tan(maths.pi() /. 4.0)
 ///       |> should.equal(1.0)
 ///     }
 /// </details>
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn tan(x: Float) -> Float {
   do_tan(x)
@@ -1288,12 +962,6 @@ pub fn tan(x: Float) -> Float {
 @external(javascript, "../maths.mjs", "tan")
 fn do_tan(a: Float) -> Float
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The hyperbolic tangent function:
 ///
 /// \\[
@@ -1321,12 +989,6 @@ fn do_tan(a: Float) -> Float
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn tanh(x: Float) -> Float {
   do_tanh(x)
 }
@@ -1335,12 +997,6 @@ pub fn tanh(x: Float) -> Float {
 @external(javascript, "../maths.mjs", "tanh")
 fn do_tanh(a: Float) -> Float
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The exponential function:
 ///
 /// \\[
@@ -1363,12 +1019,6 @@ fn do_tanh(a: Float) -> Float
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn exponential(x: Float) -> Float {
   do_exponential(x)
 }
@@ -1377,12 +1027,6 @@ pub fn exponential(x: Float) -> Float {
 @external(javascript, "../maths.mjs", "exponential")
 fn do_exponential(a: Float) -> Float
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The natural logarithm function:
 ///
 /// \\[
@@ -1412,12 +1056,6 @@ fn do_exponential(a: Float) -> Float
 /// </details>
 ///
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn natural_logarithm(x: Float) -> Result(Float, Nil) {
   case x >. 0.0 {
     True -> Ok(do_natural_logarithm(x))
@@ -1429,12 +1067,6 @@ pub fn natural_logarithm(x: Float) -> Result(Float, Nil) {
 @external(javascript, "../maths.mjs", "logarithm")
 fn do_natural_logarithm(a: Float) -> Float
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The base \\(b\\) logarithm function (computed through the "change of base" formula):
 ///
 /// \\[
@@ -1464,12 +1096,6 @@ fn do_natural_logarithm(a: Float) -> Float
 /// </details>
 ///
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn logarithm(x: Float, base: Float) -> Result(Float, Nil) {
   case x >. 0.0 && base >. 0.0 && base != 1.0 {
     True -> {
@@ -1485,12 +1111,6 @@ pub fn logarithm(x: Float, base: Float) -> Result(Float, Nil) {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The base-2 logarithm function:
 ///
 /// \\[
@@ -1519,12 +1139,6 @@ pub fn logarithm(x: Float, base: Float) -> Result(Float, Nil) {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn logarithm_2(x: Float) -> Result(Float, Nil) {
   case x >. 0.0 {
     True -> Ok(do_logarithm_2(x))
@@ -1536,12 +1150,6 @@ pub fn logarithm_2(x: Float) -> Result(Float, Nil) {
 @external(javascript, "../maths.mjs", "logarithm_2")
 fn do_logarithm_2(a: Float) -> Float
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The base-10 logarithm function:
 ///
 /// \\[
@@ -1570,12 +1178,6 @@ fn do_logarithm_2(a: Float) -> Float
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn logarithm_10(x: Float) -> Result(Float, Nil) {
   case x >. 0.0 {
     True -> Ok(do_logarithm_10(x))
@@ -1587,12 +1189,6 @@ pub fn logarithm_10(x: Float) -> Result(Float, Nil) {
 @external(javascript, "../maths.mjs", "logarithm_10")
 fn do_logarithm_10(a: Float) -> Float
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The \\(n\\)'th root function: \\(y = \sqrt[n]{x} = x^{\frac{1}{n}}\\).
 ///
 /// Note that the function is not defined if the input is negative (\\(x < 0\\)). An error will be
@@ -1619,12 +1215,6 @@ fn do_logarithm_10(a: Float) -> Float
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn nth_root(x: Float, n: Int) -> Result(Float, Nil) {
   // In the following check:
   // 1. If x is negative then return an error as it will otherwise be an
@@ -1635,19 +1225,7 @@ pub fn nth_root(x: Float, n: Int) -> Result(Float, Nil) {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The mathematical constant pi: \\(\pi \approx 3.1415\dots\\)
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn pi() -> Float {
   do_pi()
@@ -1657,30 +1235,12 @@ pub fn pi() -> Float {
 @external(javascript, "../maths.mjs", "pi")
 fn do_pi() -> Float
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The mathematical (circle) constant tau: \\(\tau = 2 \cdot \pi \approx 6.283\dots\\)
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn tau() -> Float {
   2.0 *. pi()
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The golden ratio: \\(\phi = \frac{1 + \sqrt{5}}{2}\\).
 ///
 /// <details>
@@ -1695,12 +1255,6 @@ pub fn tau() -> Float {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn golden_ratio() -> Float {
   // Calculate the golden ratio: (1 + sqrt(5)) / 2
   // Usage of let assert: A positive number '5' is given a input so no error should occur, i.e.,
@@ -1710,12 +1264,6 @@ pub fn golden_ratio() -> Float {
   { 1.0 +. sqrt5 } /. 2.0
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Euler's number \\(e \approx 2.71828\dots\\).
 ///
 /// <details>
@@ -1734,22 +1282,10 @@ pub fn golden_ratio() -> Float {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn e() -> Float {
   exponential(1.0)
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The function rounds a float to a specific number of digits (after the decimal place or before
 /// if negative). In particular, the input \\(x\\) is rounded to the nearest integer value (at the
 /// specified digit) with ties (fractional values of 0.5) being rounded to the nearest even
@@ -1784,12 +1320,6 @@ pub fn e() -> Float {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn round_to_nearest(x: Float, p: Int) -> Float {
   // Usage of let assert: The function 'float.power' will only return an error if:
   // 1. The base is negative and the exponent is fractional.
@@ -1812,12 +1342,6 @@ pub fn round_to_nearest(x: Float, p: Int) -> Float {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The function rounds a float to a specific number of digits (after the decimal place or before
 /// if negative). In particular, the input \\(x\\) is rounded to the nearest integer value (at the
 /// specified digit) with ties (fractional values of 0.5) being rounded away from zero (C/C++
@@ -1852,12 +1376,6 @@ pub fn round_to_nearest(x: Float, p: Int) -> Float {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn round_ties_away(x: Float, p: Int) -> Float {
   // Usage of let assert: The function 'float.power' will only return an error if:
   // 1. The base is negative and the exponent is fractional.
@@ -1872,12 +1390,6 @@ pub fn round_ties_away(x: Float, p: Int) -> Float {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The function rounds a float to a specific number of digits (after the decimal place or before
 /// if negative). In particular, the input \\(x\\) is rounded to the nearest integer value (at the
 /// specified digit) with ties (fractional values of 0.5) being rounded towards \\(+\infty\\)
@@ -1912,12 +1424,6 @@ pub fn round_ties_away(x: Float, p: Int) -> Float {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn round_ties_up(x: Float, p: Int) -> Float {
   // Usage of let assert: The function 'float.power' will only return an error if:
   // 1. The base is negative and the exponent is fractional.
@@ -1934,12 +1440,6 @@ pub fn round_ties_up(x: Float, p: Int) -> Float {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The function rounds a float to a specific number of digits (after the decimal place or before
 /// if negative). In particular, the input \\(x\\) is cut off at the specified digit, so the result
 /// always has an absolute value less than or equal to the absolute value of \\(x\\). This rounding
@@ -1974,12 +1474,6 @@ pub fn round_ties_up(x: Float, p: Int) -> Float {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn round_to_zero(x: Float, p: Int) -> Float {
   // Usage of let assert: The function 'float.power' will only return an error if:
   // 1. The base is negative and the exponent is fractional.
@@ -1997,12 +1491,6 @@ fn truncate_float(x: Float) -> Float {
 @external(javascript, "../maths.mjs", "truncate")
 fn do_truncate_float(a: Float) -> Float
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The function rounds a float to a specific number of digits (after the decimal place or before
 /// if negative). In particular, the input \\(x\\) is rounded to the nearest integer value (at the
 /// specified digit) that is less than or equal to the input \\(x\\). This rounding behaviour is
@@ -2037,12 +1525,6 @@ fn do_truncate_float(a: Float) -> Float
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn round_down(x: Float, p: Int) -> Float {
   // Usage of let assert: The function 'float.power' will only return an error if:
   // 1. The base is negative and the exponent is fractional.
@@ -2056,12 +1538,6 @@ pub fn round_down(x: Float, p: Int) -> Float {
 @external(javascript, "../maths.mjs", "floor")
 fn do_floor(a: Float) -> Float
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The function rounds a float to a specific number of digits (after the decimal place or before
 /// if negative). In particular, the input \\(x\\) is rounded to the nearest integer value (at the
 /// specified digit) that is larger than or equal to the input \\(x\\). This rounding behaviour is
@@ -2096,12 +1572,6 @@ fn do_floor(a: Float) -> Float
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn round_up(x: Float, p: Int) -> Float {
   // Usage of let assert: The function 'float.power' will only return an error if:
   // 1. The base is negative and the exponent is fractional.
@@ -2115,12 +1585,6 @@ pub fn round_up(x: Float, p: Int) -> Float {
 @external(javascript, "../maths.mjs", "ceiling")
 fn do_ceiling(a: Float) -> Float
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The absolute difference:
 ///
 /// \\[
@@ -2145,22 +1609,10 @@ fn do_ceiling(a: Float) -> Float
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn absolute_difference(x: Float, y: Float) -> Float {
   float.absolute_value(x -. y)
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The absolute difference:
 ///
 /// \\[
@@ -2185,31 +1637,13 @@ pub fn absolute_difference(x: Float, y: Float) -> Float {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn int_absolute_difference(a: Int, b: Int) -> Int {
   int.absolute_value(a - b)
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The function takes an input \\(x \in \mathbb{R}\\) and returns the sign of
 /// the input, indicating whether it is positive (\\(+1.0\\)), negative (\\(-1.0\\)), or
 /// zero (\\(0.0\\)).
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn sign(x: Float) -> Float {
   do_sign(x)
@@ -2224,21 +1658,9 @@ fn do_sign(x: Float) -> Float {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The function takes an input \\(x \in \mathbb{Z}\\) and returns the sign of
 /// the input, indicating whether it is positive (+1), negative (-1), or zero
 /// (0).
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn int_sign(x: Int) -> Int {
   do_int_sign(x)
@@ -2253,20 +1675,8 @@ fn do_int_sign(x: Int) -> Int {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The function takes two arguments \\(x, y \in \mathbb{R}\\) and returns \\(x\\)
 /// such that it has the same sign as \\(y\\).
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn copy_sign(x: Float, y: Float) -> Float {
   case sign(x) == sign(y) {
@@ -2279,20 +1689,8 @@ pub fn copy_sign(x: Float, y: Float) -> Float {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The function takes two arguments \\(x, y \in \mathbb{Z}\\) and returns \\(x\\)
 /// such that it has the same sign as \\(y\\).
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn int_copy_sign(x: Int, y: Int) -> Int {
   case int_sign(x) == int_sign(y) {
@@ -2305,48 +1703,18 @@ pub fn int_copy_sign(x: Int, y: Int) -> Int {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The function flips the sign of a given input value \\(x \in \mathbb{R}\\).
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn flip_sign(x: Float) -> Float {
   -1.0 *. x
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The function flips the sign of a given input value \\(x \in \mathbb{Z}\\).
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn int_flip_sign(x: Int) -> Int {
   -1 * x
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The minmax function takes two arguments \\(x, y\\) along with a function
 /// for comparing \\(x, y\\). The function returns a tuple with the smallest
 /// value first and largest second.
@@ -2368,12 +1736,6 @@ pub fn int_flip_sign(x: Int) -> Int {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn minmax(x: a, y: a, compare: fn(a, a) -> order.Order) -> #(a, a) {
   case compare(x, y) {
     order.Lt -> #(x, y)
@@ -2382,12 +1744,6 @@ pub fn minmax(x: a, y: a, compare: fn(a, a) -> order.Order) -> #(a, a) {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Returns the minimum value of a given list.
 ///
 /// <details>
@@ -2408,12 +1764,6 @@ pub fn minmax(x: a, y: a, compare: fn(a, a) -> order.Order) -> #(a, a) {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-/// 
 pub fn list_minimum(
   arr: List(a),
   compare: fn(a, a) -> order.Order,
@@ -2432,12 +1782,6 @@ pub fn list_minimum(
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Returns the maximum value of a given list.
 ///
 /// <details>
@@ -2458,12 +1802,6 @@ pub fn list_minimum(
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn list_maximum(
   arr: List(a),
   compare: fn(a, a) -> order.Order,
@@ -2482,12 +1820,6 @@ pub fn list_maximum(
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Returns the indices of the minimum values in a given list.
 ///
 /// <details>
@@ -2507,12 +1839,6 @@ pub fn list_maximum(
 ///       |> should.equal(Ok([4]))
 ///     }
 /// </details>
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn arg_minimum(
   arr: List(a),
@@ -2541,12 +1867,6 @@ pub fn arg_minimum(
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Returns the indices of the maximum values in a given list.
 ///
 /// <details>
@@ -2566,12 +1886,6 @@ pub fn arg_minimum(
 ///       |> should.equal(Ok([0, 1]))
 ///     }
 /// </details>
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn arg_maximum(
   arr: List(a),
@@ -2600,12 +1914,6 @@ pub fn arg_maximum(
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Returns a tuple consisting of the minimum and maximum values of a given list.
 ///
 /// <details>
@@ -2625,12 +1933,6 @@ pub fn arg_maximum(
 ///       |> should.equal(Ok(#(1.0, 4.0)))
 ///     }
 /// </details>
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn extrema(
   arr: List(a),
@@ -2654,12 +1956,6 @@ pub fn extrema(
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// A combinatorial function for computing the number of \\(k\\)-combinations of \\(n\\) elements
 /// with repetitions:
 ///
@@ -2699,22 +1995,10 @@ pub fn extrema(
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn combination_with_repetitions(n: Int, k: Int) -> Result(Int, Nil) {
   combination(n + k - 1, k)
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// A combinatorial function for computing the number of \\(k\\)-combinations of \\(n\\) elements
 /// without repetitions:
 ///
@@ -2758,12 +2042,6 @@ pub fn combination_with_repetitions(n: Int, k: Int) -> Result(Int, Nil) {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn combination(n: Int, k: Int) -> Result(Int, Nil) {
   case n, k {
     _, _ if n < 0 -> Error(Nil)
@@ -2788,12 +2066,6 @@ fn do_combination(n: Int, k: Int, acc: Int, element: Int) -> Int {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// A combinatorial function for computing the total number of combinations of \\(n\\)
 /// elements, that is \\(n!\\).
 ///
@@ -2815,12 +2087,6 @@ fn do_combination(n: Int, k: Int, acc: Int, element: Int) -> Int {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn factorial(n: Int) -> Result(Int, Nil) {
   case n {
     _ if n < 0 -> Error(Nil)
@@ -2836,12 +2102,6 @@ fn do_factorial(n: Int, acc: Int) -> Int {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// A combinatorial function for computing the number of \\(k\\)-permutations without
 /// repetitions:
 ///
@@ -2885,12 +2145,6 @@ fn do_factorial(n: Int, acc: Int) -> Int {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn permutation(n: Int, k: Int) -> Result(Int, Nil) {
   case n, k {
     _, _ if n < 0 -> Error(Nil)
@@ -2908,12 +2162,6 @@ fn do_permutation(n: Int, k: Int, acc: Int) -> Int {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// A combinatorial function for computing the number of \\(k\\)-permutations with repetitions:
 ///
 /// \\[
@@ -2954,12 +2202,6 @@ fn do_permutation(n: Int, k: Int, acc: Int) -> Int {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn permutation_with_repetitions(n: Int, k: Int) -> Result(Int, Nil) {
   case n, k {
     _, _ if n < 0 -> Error(Nil)
@@ -2977,12 +2219,6 @@ pub fn permutation_with_repetitions(n: Int, k: Int) -> Result(Int, Nil) {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Generates all possible combinations of \\(k\\) elements selected from a given list of size
 /// \\(n\\). The function handles the case without repetitions, that is, repeated elements
 /// are not treated as distinct.
@@ -3003,12 +2239,6 @@ pub fn permutation_with_repetitions(n: Int, k: Int) -> Result(Int, Nil) {
 ///       |> should.equal([[1, 2], [1, 3], [2, 3]])
 ///     }
 /// </details>
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn list_combination(arr: List(a), k: Int) -> Result(Yielder(List(a)), Nil) {
   case k, list.length(arr) {
@@ -3044,12 +2274,6 @@ fn do_list_combination_without_repetitions(
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Generates all possible combinations of \\(k\\) elements selected from a given list of size
 /// \\(n\\). The function handles the case when the repetition of elements is allowed, that is,
 /// repeated elements are treated as distinct.
@@ -3071,12 +2295,6 @@ fn do_list_combination_without_repetitions(
 ///       |> should.equal([[1, 1], [1, 2], [1, 3], [2, 2], [2, 3], [3, 3]])
 ///     }
 /// </details>
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn list_combination_with_repetitions(
   arr: List(a),
@@ -3123,12 +2341,6 @@ fn remove_first_by_index(
   })
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Generates all possible permutations of \\(k\\) elements selected from a given list of size
 /// \\(n\\). The function handles the case without repetitions, that is, repeated elements are
 /// not treated as distinct.
@@ -3150,12 +2362,6 @@ fn remove_first_by_index(
 ///       |> should.equal([[1, 2], [2, 1]])
 ///     }
 /// </details>
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn list_permutation(arr: List(a), k: Int) -> Result(Yielder(List(a)), Nil) {
   case k, list.length(arr) {
@@ -3189,12 +2395,6 @@ fn do_list_permutation_without_repetitions(
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Generates all possible permutations of \\(k\\) elements selected from a given list of size
 /// \\(n\\). The function handles the case when the repetition of elements is allowed, that is,
 /// repeated elements are treated as distinct.
@@ -3217,12 +2417,6 @@ fn do_list_permutation_without_repetitions(
 ///       |> should.equal(set.from_list([[1, 1], [1, 2], [2, 2], [2, 1]]))
 ///     }
 /// </details>
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn list_permutation_with_repetitions(
   arr: List(a),
@@ -3255,12 +2449,6 @@ fn do_list_permutation_with_repetitions(
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Generate a set containing all combinations of pairs of elements coming from two given sets.
 ///
 /// <details>
@@ -3283,12 +2471,6 @@ fn do_list_permutation_with_repetitions(
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn cartesian_product(xset: set.Set(a), yset: set.Set(b)) -> set.Set(#(a, b)) {
   set.fold(xset, set.new(), fn(acc0, element0) {
     set.fold(yset, acc0, fn(acc1, element1) {
@@ -3297,12 +2479,6 @@ pub fn cartesian_product(xset: set.Set(a), yset: set.Set(b)) -> set.Set(#(a, b))
   })
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the \\(p\\)-norm of a list (representing a vector):
 ///
 /// \\[
@@ -3332,12 +2508,6 @@ pub fn cartesian_product(xset: set.Set(a), yset: set.Set(b)) -> set.Set(#(a, b))
 ///       |> should.be_true()
 ///     }
 /// </details>
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn norm(arr: List(Float), p: Float) -> Result(Float, Nil) {
   case arr {
@@ -3397,12 +2567,6 @@ pub fn norm(arr: List(Float), p: Float) -> Result(Float, Nil) {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the weighted \\(p\\)-norm of a list (representing a vector):
 ///
 /// \\[
@@ -3433,12 +2597,6 @@ pub fn norm(arr: List(Float), p: Float) -> Result(Float, Nil) {
 ///       |> should.be_true()
 ///     }
 /// </details>
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn norm_with_weights(
   arr: List(#(Float, Float)),
@@ -3510,12 +2668,6 @@ pub fn norm_with_weights(
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the Manhattan distance between two lists (representing
 /// vectors):
 ///
@@ -3538,22 +2690,10 @@ pub fn norm_with_weights(
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn manhattan_distance(arr: List(#(Float, Float))) -> Result(Float, Nil) {
   minkowski_distance(arr, 1.0)
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the weighted Manhattan distance between two lists (representing
 /// vectors):
 ///
@@ -3577,24 +2717,12 @@ pub fn manhattan_distance(arr: List(#(Float, Float))) -> Result(Float, Nil) {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn manhattan_distance_with_weights(
   arr: List(#(Float, Float, Float)),
 ) -> Result(Float, Nil) {
   minkowski_distance_with_weights(arr, 1.0)
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the Minkowski distance between two lists (representing
 /// vectors):
 ///
@@ -3625,12 +2753,6 @@ pub fn manhattan_distance_with_weights(
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn minkowski_distance(
   arr: List(#(Float, Float)),
   p: Float,
@@ -3649,12 +2771,6 @@ pub fn minkowski_distance(
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the weighted Minkowski distance between two lists (representing
 /// vectors):
 ///
@@ -3689,12 +2805,6 @@ pub fn minkowski_distance(
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn minkowski_distance_with_weights(
   arr: List(#(Float, Float, Float)),
   p: Float,
@@ -3716,12 +2826,6 @@ pub fn minkowski_distance_with_weights(
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the Euclidean distance between two lists (representing
 /// vectors):
 ///
@@ -3748,22 +2852,10 @@ pub fn minkowski_distance_with_weights(
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn euclidean_distance(arr: List(#(Float, Float))) -> Result(Float, Nil) {
   minkowski_distance(arr, 2.0)
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the weighted Euclidean distance between two lists (representing
 /// vectors):
 ///
@@ -3792,24 +2884,12 @@ pub fn euclidean_distance(arr: List(#(Float, Float))) -> Result(Float, Nil) {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn euclidean_distance_with_weights(
   arr: List(#(Float, Float, Float)),
 ) -> Result(Float, Nil) {
   minkowski_distance_with_weights(arr, 2.0)
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the Chebyshev distance between two lists (representing vectors):
 ///
 /// \\[
@@ -3831,12 +2911,6 @@ pub fn euclidean_distance_with_weights(
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn chebyshev_distance(arr: List(#(Float, Float))) -> Result(Float, Nil) {
   case arr {
     [] -> Error(Nil)
@@ -3847,12 +2921,6 @@ pub fn chebyshev_distance(arr: List(#(Float, Float))) -> Result(Float, Nil) {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the weighted Chebyshev distance between two lists (representing vectors):
 ///
 /// \\[
@@ -3879,12 +2947,6 @@ pub fn chebyshev_distance(arr: List(#(Float, Float))) -> Result(Float, Nil) {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn chebyshev_distance_with_weights(
   arr: List(#(Float, Float, Float)),
 ) -> Result(Float, Nil) {
@@ -3906,12 +2968,6 @@ pub fn chebyshev_distance_with_weights(
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the n'th moment about the mean of a list of elements.
 ///
 /// <details>
@@ -3942,12 +2998,6 @@ pub fn chebyshev_distance_with_weights(
 ///       |> should.equal(Ok(2.0))
 ///     }
 /// </details>
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn moment(arr: List(Float), n: Int) -> Result(Float, Nil) {
   case arr, n {
@@ -3985,12 +3035,6 @@ pub fn moment(arr: List(Float), n: Int) -> Result(Float, Nil) {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the arithmetic mean of the elements in a list:
 ///
 /// \\[
@@ -4017,12 +3061,6 @@ pub fn moment(arr: List(Float), n: Int) -> Result(Float, Nil) {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn mean(arr: List(Float)) -> Result(Float, Nil) {
   case arr {
     [] -> Error(Nil)
@@ -4030,12 +3068,6 @@ pub fn mean(arr: List(Float)) -> Result(Float, Nil) {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the harmonic mean \\(\bar{x}\\) of the elements in a list:
 ///
 /// \\[
@@ -4070,12 +3102,6 @@ pub fn mean(arr: List(Float)) -> Result(Float, Nil) {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn harmonic_mean(arr: List(Float)) -> Result(Float, Nil) {
   case arr {
     [] -> Error(Nil)
@@ -4099,12 +3125,6 @@ pub fn harmonic_mean(arr: List(Float)) -> Result(Float, Nil) {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the geometric mean \\(\bar{x}\\) of the elements in a list:
 ///
 /// \\[
@@ -4139,12 +3159,6 @@ pub fn harmonic_mean(arr: List(Float)) -> Result(Float, Nil) {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn geometric_mean(arr: List(Float)) -> Result(Float, Nil) {
   case arr {
     [] -> Error(Nil)
@@ -4168,12 +3182,6 @@ pub fn geometric_mean(arr: List(Float)) -> Result(Float, Nil) {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the median of the elements in a list.
 ///
 /// <details>
@@ -4196,12 +3204,6 @@ pub fn geometric_mean(arr: List(Float)) -> Result(Float, Nil) {
 ///       |> should.equal(Ok(2.5))
 ///     }
 /// </details>
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn median(arr: List(Float)) -> Result(Float, Nil) {
   use <- bool.guard(list.is_empty(arr), Error(Nil))
@@ -4232,12 +3234,6 @@ fn do_median(
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the sample variance of the elements in a list:
 ///
 /// \\[
@@ -4269,12 +3265,6 @@ fn do_median(
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn variance(arr: List(Float), ddof: Int) -> Result(Float, Nil) {
   let length = list.length(arr)
   case length {
@@ -4305,12 +3295,6 @@ pub fn variance(arr: List(Float), ddof: Int) -> Result(Float, Nil) {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the sample standard deviation of the elements in a list:
 /// \\[
 /// s = \left(\frac{1}{n - d} \cdot \sum_{i=1}\^{n}(x_i - \bar{x})\^{2}\right)\^{\frac{1}{2}}
@@ -4341,12 +3325,6 @@ pub fn variance(arr: List(Float), ddof: Int) -> Result(Float, Nil) {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn standard_deviation(arr: List(Float), ddof: Int) -> Result(Float, Nil) {
   let length = list.length(arr)
   case length {
@@ -4365,12 +3343,6 @@ pub fn standard_deviation(arr: List(Float), ddof: Int) -> Result(Float, Nil) {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the sample kurtosis of a list of elements using the
 /// definition of Fisher.
 ///
@@ -4397,12 +3369,6 @@ pub fn standard_deviation(arr: List(Float), ddof: Int) -> Result(Float, Nil) {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn kurtosis(arr: List(Float)) -> Result(Float, Nil) {
   case list.length(arr) < 4 {
     True -> Error(Nil)
@@ -4420,12 +3386,6 @@ pub fn kurtosis(arr: List(Float)) -> Result(Float, Nil) {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the sample skewness of a list of elements using the
 /// Fisher-Pearson coefficient of skewness.
 ///
@@ -4452,12 +3412,6 @@ pub fn kurtosis(arr: List(Float)) -> Result(Float, Nil) {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn skewness(arr: List(Float)) -> Result(Float, Nil) {
   case list.length(arr) < 3 {
     True -> Error(Nil)
@@ -4475,12 +3429,6 @@ pub fn skewness(arr: List(Float)) -> Result(Float, Nil) {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the n'th percentile of the elements in a list using
 /// linear interpolation between closest ranks.
 ///
@@ -4502,12 +3450,6 @@ pub fn skewness(arr: List(Float)) -> Result(Float, Nil) {
 ///       |> should.equal(Ok(29.0))
 ///     }
 /// </details>
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn percentile(arr: List(Float), n: Int) -> Result(Float, Nil) {
   case arr, n {
@@ -4537,12 +3479,6 @@ pub fn percentile(arr: List(Float), n: Int) -> Result(Float, Nil) {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the z-score of each value in the list relative to the sample
 /// mean and standard deviation.
 ///
@@ -4566,12 +3502,6 @@ pub fn percentile(arr: List(Float), n: Int) -> Result(Float, Nil) {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn zscore(arr: List(Float), ddof: Int) -> Result(List(Float), Nil) {
   let length = list.length(arr)
   case length {
@@ -4593,12 +3523,6 @@ pub fn zscore(arr: List(Float), ddof: Int) -> Result(List(Float), Nil) {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the interquartile range (IQR) of the elements in a list.
 ///
 /// <details>
@@ -4619,12 +3543,6 @@ pub fn zscore(arr: List(Float), ddof: Int) -> Result(List(Float), Nil) {
 ///       |> should.equal(Ok(3.0))
 ///     }
 /// </details>
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn interquartile_range(arr: List(Float)) -> Result(Float, Nil) {
   case arr {
@@ -4664,12 +3582,6 @@ pub fn interquartile_range(arr: List(Float)) -> Result(Float, Nil) {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate Pearson's sample correlation coefficient to determine the linear
 /// relationship between the elements in two lists of equal
 /// length. The correlation coefficient \\(r_{xy} \in \[-1, 1\]\\) is calculated
@@ -4725,12 +3637,6 @@ pub fn interquartile_range(arr: List(Float)) -> Result(Float, Nil) {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn correlation(arr: List(#(Float, Float))) -> Result(Float, Nil) {
   let length = list.length(arr)
   case length >= 2 {
@@ -4758,12 +3664,6 @@ pub fn correlation(arr: List(#(Float, Float))) -> Result(Float, Nil) {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The Jaccard index measures similarity between two sets of elements. Mathematically, the
 /// Jaccard index is defined as:
 ///
@@ -4797,12 +3697,6 @@ pub fn correlation(arr: List(#(Float, Float))) -> Result(Float, Nil) {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn jaccard_index(xset: set.Set(a), yset: set.Set(a)) -> Float {
   // Usage of let assert: No error will occur since the input parameters 'alpha' and 'beta'
   // are larger than or equal to zero
@@ -4810,12 +3704,6 @@ pub fn jaccard_index(xset: set.Set(a), yset: set.Set(a)) -> Float {
   result
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The Sørensen-Dice coefficient measures the similarity between two sets of elements.
 /// Mathematically, the coefficient is defined as:
 ///
@@ -4851,12 +3739,6 @@ pub fn jaccard_index(xset: set.Set(a), yset: set.Set(a)) -> Float {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn sorensen_dice_coefficient(xset: set.Set(a), yset: set.Set(a)) -> Float {
   // Usage of let assert: No error will occur since the input parameters 'alpha' and 'beta'
   // are larger than or equal to zero
@@ -4864,12 +3746,6 @@ pub fn sorensen_dice_coefficient(xset: set.Set(a), yset: set.Set(a)) -> Float {
   result
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The Tversky index is a generalization of the Jaccard index and Sørensen-Dice
 /// coefficient, which adds flexibility in measuring similarity between two sets using two
 /// parameters, \\(\alpha\\) and \\(\beta\\). These parameters allow for asymmetric
@@ -4909,12 +3785,6 @@ pub fn sorensen_dice_coefficient(xset: set.Set(a), yset: set.Set(a)) -> Float {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn tversky_index(
   xset: set.Set(a),
   yset: set.Set(a),
@@ -4944,12 +3814,6 @@ pub fn tversky_index(
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The Overlap coefficient, also known as the Szymkiewicz–Simpson coefficient, is
 /// a measure of similarity between two sets that focuses on the size of the
 /// intersection relative to the smaller of the two sets. It is defined
@@ -4986,12 +3850,6 @@ pub fn tversky_index(
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn overlap_coefficient(xset: set.Set(a), yset: set.Set(a)) -> Float {
   let intersection =
     set.intersection(xset, yset)
@@ -5003,12 +3861,6 @@ pub fn overlap_coefficient(xset: set.Set(a), yset: set.Set(a)) -> Float {
   intersection /. minsize
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the cosine similarity between two lists (representing
 /// vectors):
 ///
@@ -5048,12 +3900,6 @@ pub fn overlap_coefficient(xset: set.Set(a), yset: set.Set(a)) -> Float {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn cosine_similarity(arr: List(#(Float, Float))) -> Result(Float, Nil) {
   case arr {
     [] -> Error(Nil)
@@ -5077,12 +3923,6 @@ pub fn cosine_similarity(arr: List(#(Float, Float))) -> Result(Float, Nil) {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the weighted cosine similarity between two lists (representing
 /// vectors):
 ///
@@ -5133,12 +3973,6 @@ pub fn cosine_similarity(arr: List(#(Float, Float))) -> Result(Float, Nil) {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn cosine_similarity_with_weights(
   arr: List(#(Float, Float, Float)),
 ) -> Result(Float, Nil) {
@@ -5173,12 +4007,6 @@ pub fn cosine_similarity_with_weights(
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the Canberra distance between two lists:
 ///
 /// \\[
@@ -5204,12 +4032,6 @@ pub fn cosine_similarity_with_weights(
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn canberra_distance(arr: List(#(Float, Float))) -> Result(Float, Nil) {
   case arr {
     [] -> Error(Nil)
@@ -5227,12 +4049,6 @@ pub fn canberra_distance(arr: List(#(Float, Float))) -> Result(Float, Nil) {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the weighted Canberra distance between two lists:
 ///
 /// \\[
@@ -5258,12 +4074,6 @@ pub fn canberra_distance(arr: List(#(Float, Float))) -> Result(Float, Nil) {
 ///       |> should.equal(Ok(1.5))
 ///     }
 /// </details>
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn canberra_distance_with_weights(
   arr: List(#(Float, Float, Float)),
@@ -5291,12 +4101,6 @@ pub fn canberra_distance_with_weights(
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the Bray-Curtis distance between two lists:
 ///
 /// \\[
@@ -5325,12 +4129,6 @@ pub fn canberra_distance_with_weights(
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn braycurtis_distance(arr: List(#(Float, Float))) -> Result(Float, Nil) {
   case arr {
     [] -> Error(Nil)
@@ -5350,12 +4148,6 @@ pub fn braycurtis_distance(arr: List(#(Float, Float))) -> Result(Float, Nil) {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Calculate the weighted Bray-Curtis distance between two lists:
 ///
 /// \\[
@@ -5385,12 +4177,6 @@ pub fn braycurtis_distance(arr: List(#(Float, Float))) -> Result(Float, Nil) {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn braycurtis_distance_with_weights(
   arr: List(#(Float, Float, Float)),
 ) -> Result(Float, Nil) {
@@ -5419,12 +4205,6 @@ pub fn braycurtis_distance_with_weights(
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Determine if a given value \\(x\\) is close to or equivalent to a reference value
 /// \\(y\\) based on supplied relative \\(r_{tol}\\) and absolute \\(a_{tol}\\) tolerance
 /// values. The equivalence of the two given values are then determined based on
@@ -5453,24 +4233,12 @@ pub fn braycurtis_distance_with_weights(
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn is_close(x: Float, y: Float, rtol: Float, atol: Float) -> Bool {
   let x = absolute_difference(x, y)
   let y = atol +. rtol *. float.absolute_value(y)
   x <=. y
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Determine if each value \\(x_i\\) is close to or equivalent to its corresponding reference value
 /// \\(y_i\\), in a list of value pairs \\((x_i, y_i)\\), based on supplied relative \\(r_{tol}\\)
 /// and absolute  \\(a_{tol}\\) tolerance values. The equivalence of each pair \\((x_i, y_i)\\) is
@@ -5510,12 +4278,6 @@ pub fn is_close(x: Float, y: Float, rtol: Float, atol: Float) -> Bool {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn all_close(
   arr: List(#(Float, Float)),
   rtol: Float,
@@ -5526,12 +4288,6 @@ pub fn all_close(
   is_close(x, y, rtol, atol)
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Determine if a given value \\(x\\) is fractional, i.e., if it contains a fractional part:
 ///
 /// \\[
@@ -5556,22 +4312,10 @@ pub fn all_close(
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn is_fractional(x: Float) -> Bool {
   do_ceiling(x) -. x >. 0.0
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// A function that determines if a given integer value \\(x \in \mathbb{Z}\\) is a power of
 /// another integer value \\(y \in \mathbb{Z}\\), i.e., the function evaluates whether \\(x\\) can
 /// be expressed as \\(y^n\\) for some integer \\(n \geq 0\\), by computing the base-\\(y\\)
@@ -5601,12 +4345,6 @@ pub fn is_fractional(x: Float) -> Bool {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn is_power(x: Int, y: Int) -> Bool {
   case logarithm(int.to_float(x), int.to_float(y)) {
     Ok(value) -> {
@@ -5618,12 +4356,6 @@ pub fn is_power(x: Int, y: Int) -> Bool {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// A function that tests whether a given integer value \\(n \in \mathbb{Z}\\) is a
 /// perfect number. A number is perfect if it is equal to the sum of its proper
 /// positive divisors.
@@ -5652,22 +4384,10 @@ pub fn is_power(x: Int, y: Int) -> Bool {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn is_perfect(n: Int) -> Bool {
   int.sum(proper_divisors(n)) == n
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// A function that tests whether a given integer value \\(x \in \mathbb{Z}\\) is a
 /// prime number. A prime number is a natural number greater than 1 that has no
 /// positive divisors other than 1 and itself.
@@ -5708,12 +4428,6 @@ pub fn is_perfect(n: Int) -> Bool {
 ///       |> should.equal(False)
 ///     }
 /// </details>
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn is_prime(x: Int) -> Bool {
   case x {
@@ -5757,12 +4471,6 @@ fn powmod_with_check(base: Int, exponent: Int, modulus: Int) -> Int {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// A function that tests whether a given real number \\(x \in \mathbb{R}\\) is strictly
 /// between two other real numbers, \\(a,b \in \mathbb{R}\\), such that \\(a < x < b\\).
 ///
@@ -5784,22 +4492,10 @@ fn powmod_with_check(base: Int, exponent: Int, modulus: Int) -> Int {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn is_between(x: Float, lower: Float, upper: Float) -> Bool {
   lower <. x && x <. upper
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// A function that tests whether a given integer \\(n \in \mathbb{Z}\\) is divisible by another
 /// integer \\(d \in \mathbb{Z}\\), such that \\(n \mod d = 0\\).
 ///
@@ -5827,22 +4523,10 @@ pub fn is_between(x: Float, lower: Float, upper: Float) -> Bool {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn is_divisible(n: Int, d: Int) -> Bool {
   n % d == 0
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// A function that tests whether a given integer \\(m \in \mathbb{Z}\\) is a multiple of another
 /// integer \\(k \in \mathbb{Z}\\), such that \\(m = k \cdot q\\), with \\(q \in \mathbb{Z}\\).
 ///
@@ -5871,22 +4555,10 @@ pub fn is_divisible(n: Int, d: Int) -> Bool {
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn is_multiple(m: Int, k: Int) -> Bool {
   m % k == 0
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The beta function over the real numbers:
 ///
 /// \\[
@@ -5895,29 +4567,11 @@ pub fn is_multiple(m: Int, k: Int) -> Bool {
 ///
 /// The beta function is evaluated through the use of the gamma function.
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn beta(x: Float, y: Float) -> Float {
   gamma(x) *. gamma(y) /. gamma(x +. y)
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The error function.
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn erf(x: Float) -> Float {
   let a1 = 0.254829592
@@ -5941,23 +4595,11 @@ pub fn erf(x: Float) -> Float {
   sign *. y
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The gamma function over the real numbers. The function is essentially equal to
 /// the factorial for any positive integer argument: \\(\Gamma(n) = (n - 1)!\\)
 ///
 /// The implemented gamma function is approximated through Lanczos approximation
 /// using the same coefficients used by the GNU Scientific Library.
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn gamma(x: Float) -> Float {
   gamma_lanczos(x)
@@ -6004,22 +4646,10 @@ fn gamma_lanczos(x: Float) -> Float {
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The lower incomplete gamma function over the real numbers.
 ///
 /// The implemented incomplete gamma function is evaluated through a power series
 /// expansion.
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn incomplete_gamma(a: Float, x: Float) -> Result(Float, Nil) {
   case a >. 0.0 && x >=. 0.0 {
@@ -6058,12 +4688,6 @@ fn incomplete_gamma_sum(
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The function returns a list of evenly spaced values within a specified interval
 /// `[start, stop)` based on a given increment size.
 ///
@@ -6091,12 +4715,6 @@ fn incomplete_gamma_sum(
 ///       |> should.equal([5.0, 4.0, 3.0, 2.0])
 ///     }
 /// </details>
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn step_range(start: Float, stop: Float, increment: Float) -> List(Float) {
   case
@@ -6137,12 +4755,6 @@ fn do_step_range(
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The function is similar to [`step_range`](#step_range) but instead returns a yielder
 /// (lazily evaluated sequence of elements). This function can be used whenever there is a need
 /// to generate a larger-than-usual sequence of elements.
@@ -6172,12 +4784,6 @@ fn do_step_range(
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn yield_step_range(
   start: Float,
   stop: Float,
@@ -6205,12 +4811,6 @@ pub fn yield_step_range(
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The function returns a list of linearly spaced points over a specified
 /// interval. The endpoint of the interval can optionally be included/excluded. The number of
 /// points and whether the endpoint is included determine the spacing between values.
@@ -6235,12 +4835,6 @@ pub fn yield_step_range(
 ///       |> should.be_error()
 ///     }
 /// </details>
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn linear_space(
   start: Float,
@@ -6288,12 +4882,6 @@ fn do_linear_space(
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The function is similar to [`linear_space`](#linear_space) but instead returns a yielder
 /// (lazily evaluated sequence of elements). This function can be used whenever there is a need
 /// to generate a larger-than-usual sequence of elements.
@@ -6328,12 +4916,6 @@ fn do_linear_space(
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn yield_linear_space(
   start: Float,
   stop: Float,
@@ -6361,12 +4943,6 @@ pub fn yield_linear_space(
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The function returns a list of logarithmically spaced points over a specified
 /// interval. The endpoint of the interval can optionally be included/excluded.
 /// The number of points, base, and whether the endpoint is included determine
@@ -6398,12 +4974,6 @@ pub fn yield_linear_space(
 ///       |> should.be_error()
 ///     }
 /// </details>
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn logarithmic_space(
   start: Float,
@@ -6437,12 +5007,6 @@ pub fn logarithmic_space(
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The function is similar to [`logarithmic_space`](#logarithmic_space) but instead returns a yielder
 /// (lazily evaluated sequence of elements). This function can be used whenever there is a need
 /// to generate a larger-than-usual sequence of elements.
@@ -6471,12 +5035,6 @@ pub fn logarithmic_space(
 ///       should.equal(yielder.step(rest), Done)
 ///     }
 /// </details>
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn yield_logarithmic_space(
   start: Float,
@@ -6510,12 +5068,6 @@ pub fn yield_logarithmic_space(
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The function returns a list of a geometric progression between two specified
 /// values, where each value is a constant multiple of the previous one. Unlike
 /// [`logarithmic_space`](#logarithmic_space), this function allows specifying the starting
@@ -6559,12 +5111,6 @@ pub fn yield_logarithmic_space(
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn geometric_space(
   start: Float,
   stop: Float,
@@ -6585,12 +5131,6 @@ pub fn geometric_space(
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The function is similar to [`geometric_space`](#geometric_space) but instead returns a yielder
 /// (lazily evaluated sequence of elements). This function can be used whenever there is a need
 /// to generate a larger-than-usual sequence of elements.
@@ -6619,12 +5159,6 @@ pub fn geometric_space(
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn yield_geometric_space(
   start: Float,
   stop: Float,
@@ -6645,12 +5179,6 @@ pub fn yield_geometric_space(
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// Generates evenly spaced points around a center value. The total span (around the center value)
 /// is determined by the `radius` argument of the function.
 ///
@@ -6672,12 +5200,6 @@ pub fn yield_geometric_space(
 ///     }
 /// </details>
 ///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
-///
 pub fn symmetric_space(
   center: Float,
   radius: Float,
@@ -6694,12 +5216,6 @@ pub fn symmetric_space(
   }
 }
 
-/// <div style="text-align: right;">
-///     <a href="https://github.com/gleam-community/maths/issues">
-///         <small>Spot a typo? Open an issue!</small>
-///     </a>
-/// </div>
-///
 /// The function is similar to [`symmetric_space`](#symmetric_space) but instead returns a yielder
 /// (lazily evaluated sequence of elements). This function can be used whenever there is a need
 /// to generate a larger-than-usual sequence of elements.
@@ -6733,12 +5249,6 @@ pub fn symmetric_space(
 ///       should.equal(yielder.step(rest), Done)
 ///     }
 /// </details>
-///
-/// <div style="text-align: right;">
-///     <a href="#">
-///         <small>Back to top ↑</small>
-///     </a>
-/// </div>
 ///
 pub fn yield_symmetric_space(
   center: Float,
