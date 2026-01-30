@@ -34,7 +34,7 @@ import gleam/yielder.{type Yielder}
 /// integer that is divisible by both \\(x\\) and \\(y\\).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -82,7 +82,7 @@ fn do_gcd(x: Int, y: Int) -> Int {
 /// the arguments is `0`.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -116,7 +116,7 @@ pub fn euclidean_modulo(x: Int, y: Int) -> Int {
 /// integer that has both \\(x\\) and \\(y\\) as factors.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -147,7 +147,7 @@ pub fn lcm(x: Int, y: Int) -> Int {
 /// number itself.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -203,7 +203,7 @@ fn do_find_divisors(n: Int, max: Int, acc: set.Set(Int), i: Int) -> set.Set(Int)
 /// number itself.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -241,7 +241,7 @@ pub fn proper_divisors(n: Int) -> List(Int) {
 /// are corresponding positive weights.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleam/float
@@ -290,7 +290,7 @@ pub fn weighted_sum(arr: List(#(Float, Float))) -> Result(Float, Nil) {
 /// are corresponding positive weights.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleam/float
@@ -348,7 +348,7 @@ pub fn weighted_product(arr: List(#(Float, Float))) -> Result(Float, Nil) {
 /// sum of the \\(1\\) to \\(j\\) first elements in the given list.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -386,7 +386,7 @@ pub fn cumulative_sum(arr: List(Float)) -> List(Float) {
 /// sum of the \\(1\\) to \\(j\\) first elements in the given list.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -425,7 +425,7 @@ pub fn int_cumulative_sum(arr: List(Int)) -> List(Int) {
 /// in the given list.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -464,7 +464,7 @@ pub fn cumulative_product(arr: List(Float)) -> List(Float) {
 /// in the given list.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -494,7 +494,7 @@ pub fn int_cumulative_product(arr: List(Int)) -> List(Int) {
 /// That is, \\(1 \text{ degrees } = \frac{\pi}{180} \text{ radians }\\).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -515,7 +515,7 @@ pub fn degrees_to_radians(x: Float) -> Float {
 /// That is, \\(1 \text{ radians } = \frac{180}{\pi} \text{ degrees }\\).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -538,7 +538,7 @@ pub fn radians_to_degrees(x: Float) -> Float {
 /// Converts polar coordinates \\((r, \theta)\\) to Cartesian coordinates \\((x, y)\\).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -565,7 +565,7 @@ pub fn polar_to_cartesian(r: Float, theta: Float) -> #(Float, Float) {
 /// Converts Cartesian coordinates \\((x, y)\\) to polar coordinates \\((r, \theta)\\).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -604,7 +604,7 @@ pub fn cartesian_to_polar(x: Float, y: Float) -> #(Float, Float) {
 /// an error is returned.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -645,7 +645,7 @@ fn do_acos(a: Float) -> Float
 /// If the input value is outside the domain of the function an error is returned.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -683,7 +683,7 @@ fn do_acosh(a: Float) -> Float
 /// radians). If the input value is outside the domain of the function an error is returned.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -724,7 +724,7 @@ fn do_asin(a: Float) -> Float
 /// \\(\(-\infty, +\infty\)\\).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -756,7 +756,7 @@ fn do_asinh(a: Float) -> Float
 /// (an angle in radians).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -797,7 +797,7 @@ fn do_atan(a: Float) -> Float
 /// \\(\[-\pi, \pi\]\\).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -829,7 +829,7 @@ fn do_atan2(a: Float, b: Float) -> Float
 /// If the input value is outside the domain of the function an error is returned.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -869,7 +869,7 @@ fn do_atanh(a: Float) -> Float
 /// radians) as input and returns a numeric value \\(y\\) that lies in the range \\(\[-1, 1\]\\).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -904,7 +904,7 @@ fn do_cos(a: Float) -> Float
 /// \\(\(-\infty, \infty\)\\). If the input value is too large an overflow error might occur.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -935,7 +935,7 @@ fn do_cosh(a: Float) -> Float
 /// radians) as input and returns a numeric value \\(y\\) that lies in the range \\(\[-1, 1\]\\).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -970,7 +970,7 @@ fn do_sin(a: Float) -> Float
 /// If the input value is too large an overflow error might occur.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -1003,7 +1003,7 @@ fn do_sinh(a: Float) -> Float
 /// a numeric value \\(y\\) that lies in the range \\(\(-\infty, +\infty\)\\).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -1037,7 +1037,7 @@ fn do_tan(a: Float) -> Float
 /// in radians) and returns a numeric value \\(y\\) that lies in the range \\(\[-1, 1\]\\).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -1075,7 +1075,7 @@ fn do_tanh(a: Float) -> Float
 /// Note: If the input value \\(x\\) is too large an overflow error might occur.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -1107,7 +1107,7 @@ fn do_exponential(a: Float) -> Float
 /// If the input value is outside the domain of the function an error is returned.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -1149,7 +1149,7 @@ fn do_natural_logarithm(a: Float) -> Float
 /// If the input value is outside the domain of the function an error is returned.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -1195,7 +1195,7 @@ pub fn logarithm(x: Float, base: Float) -> Result(Float, Nil) {
 /// If the input value is outside the domain of the function an error is returned.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -1236,7 +1236,7 @@ fn do_logarithm_2(a: Float) -> Float
 /// If the input value is outside the domain of the function an error is returned.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -1272,7 +1272,7 @@ fn do_logarithm_10(a: Float) -> Float
 /// returned as an imaginary number will otherwise have to be returned.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -1323,7 +1323,7 @@ pub fn tau() -> Float {
 /// The golden ratio: \\(\phi = \frac{1 + \sqrt{5}}{2}\\).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -1348,7 +1348,7 @@ pub fn golden_ratio() -> Float {
 /// Euler's number \\(e \approx 2.71828\dots\\).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -1394,7 +1394,7 @@ pub fn e() -> Float {
 /// </details>
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -1454,7 +1454,7 @@ pub fn round_to_nearest(x: Float, p: Int) -> Float {
 /// </details>
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -1506,7 +1506,7 @@ pub fn round_ties_away(x: Float, p: Int) -> Float {
 /// </details>
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -1560,7 +1560,7 @@ pub fn round_ties_up(x: Float, p: Int) -> Float {
 /// </details>
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -1615,7 +1615,7 @@ fn do_truncate_float(a: Float) -> Float
 /// </details>
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -1666,7 +1666,7 @@ fn do_floor(a: Float) -> Float
 /// </details>
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -1702,7 +1702,7 @@ fn do_ceiling(a: Float) -> Float
 /// value which is the absolute difference of the inputs.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -1732,7 +1732,7 @@ pub fn absolute_difference(x: Float, y: Float) -> Float {
 /// value which is the absolute difference of the inputs.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -1832,7 +1832,7 @@ pub fn int_flip_sign(x: Int) -> Int {
 /// value first and largest second.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleam/float
 /// import gleam/int
@@ -1861,7 +1861,7 @@ pub fn minmax(x: a, y: a, compare: fn(a, a) -> order.Order) -> #(a, a) {
 /// Returns the minimum value of a given list.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleam/int
@@ -1902,7 +1902,7 @@ pub fn list_minimum(
 /// Returns the maximum value of a given list.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleam/float
@@ -1943,7 +1943,7 @@ pub fn list_maximum(
 /// Returns the indices of the minimum values in a given list.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleam/float
@@ -1993,7 +1993,7 @@ pub fn arg_minimum(
 /// Returns the indices of the maximum values in a given list.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleam/float
@@ -2043,7 +2043,7 @@ pub fn arg_maximum(
 /// Returns a tuple consisting of the minimum and maximum values of a given list.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleam/float
@@ -2109,7 +2109,7 @@ pub fn extrema(
 /// </details>
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -2158,7 +2158,7 @@ pub fn combination_with_repetitions(n: Int, k: Int) -> Result(Int, Nil) {
 /// </details>
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -2209,7 +2209,7 @@ fn do_combination(n: Int, k: Int, acc: Int, element: Int) -> Int {
 /// elements, that is \\(n!\\).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -2268,7 +2268,7 @@ fn do_factorial(n: Int, acc: Int) -> Int {
 /// </details>
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -2329,7 +2329,7 @@ fn do_permutation(n: Int, k: Int, acc: Int) -> Int {
 /// </details>
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -2374,7 +2374,7 @@ pub fn permutation_with_repetitions(n: Int, k: Int) -> Result(Int, Nil) {
 /// are not treated as distinct.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleam/yielder
@@ -2432,7 +2432,7 @@ fn do_list_combination_without_repetitions(
 /// repeated elements are treated as distinct.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleam/yielder
@@ -2502,7 +2502,7 @@ fn remove_first_by_index(
 /// not treated as distinct.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleam/yielder
@@ -2559,7 +2559,7 @@ fn do_list_permutation_without_repetitions(
 /// repeated elements are treated as distinct.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleam/yielder
@@ -2614,7 +2614,7 @@ fn do_list_permutation_with_repetitions(
 /// Generate a set containing all combinations of pairs of elements coming from two given sets.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleam/set
@@ -2654,7 +2654,7 @@ pub fn cartesian_product(xset: set.Set(a), yset: set.Set(b)) -> set.Set(#(a, b))
 /// the input list indexed by \\(i\\).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -2746,7 +2746,7 @@ pub fn norm(arr: List(Float), p: Float) -> Result(Float, Nil) {
 /// a corresponding positive weight.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -2850,7 +2850,7 @@ pub fn norm_with_weights(
 /// values in the respective input lists indexed by \\(i\\).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -2880,7 +2880,7 @@ pub fn manhattan_distance(arr: List(#(Float, Float))) -> Result(Float, Nil) {
 /// \\(w_i \in \mathbb{R}_{+}\\) are corresponding positive weights.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -2914,7 +2914,7 @@ pub fn manhattan_distance_with_weights(
 /// (\\(p=2\\)) and the Manhattan distance (\\(p = 1\\)).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -2966,7 +2966,7 @@ pub fn minkowski_distance(
 /// (\\(p=2\\)) and the Manhattan distance (\\(p = 1\\)).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -3020,7 +3020,7 @@ pub fn minkowski_distance_with_weights(
 /// values in the respective input lists indexed by \\(i\\).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -3054,7 +3054,7 @@ pub fn euclidean_distance(arr: List(#(Float, Float))) -> Result(Float, Nil) {
 /// \\(w_i \in \mathbb{R}_{+}\\) are corresponding positive weights.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -3089,7 +3089,7 @@ pub fn euclidean_distance_with_weights(
 /// values in the respective input lists indexed by \\(i\\).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -3124,7 +3124,7 @@ pub fn chebyshev_distance(arr: List(#(Float, Float))) -> Result(Float, Nil) {
 /// \\(w_i \in \mathbb{R}_{+}\\) are corresponding positive weights.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -3166,7 +3166,7 @@ pub fn chebyshev_distance_with_weights(
 /// Calculate the n'th moment about the mean of a list of elements.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -3243,7 +3243,7 @@ pub fn moment(arr: List(Float), n: Int) -> Result(Float, Nil) {
 /// is the sample point in the input list indexed by \\(i\\).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -3280,7 +3280,7 @@ pub fn mean(arr: List(Float)) -> Result(Float, Nil) {
 /// Note: The harmonic mean is only defined for positive numbers.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -3340,7 +3340,7 @@ pub fn harmonic_mean(arr: List(Float)) -> Result(Float, Nil) {
 /// Note: The geometric mean is only defined for positive numbers.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -3392,7 +3392,7 @@ pub fn geometric_mean(arr: List(Float)) -> Result(Float, Nil) {
 /// Calculate the median of the elements in a list.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -3456,7 +3456,7 @@ fn do_median(
 /// Degrees of Freedom". It is typically set to \\(d = 1\\), which gives an unbiased estimate.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -3519,7 +3519,7 @@ pub fn variance(arr: List(Float), ddof: Int) -> Result(Float, Nil) {
 /// Degrees of Freedom", and is typically set to \\(d = 1\\), which gives an unbiased estimate.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -3563,7 +3563,7 @@ pub fn standard_deviation(arr: List(Float), ddof: Int) -> Result(Float, Nil) {
 /// definition of Fisher.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -3609,7 +3609,7 @@ pub fn kurtosis(arr: List(Float)) -> Result(Float, Nil) {
 /// Fisher-Pearson coefficient of skewness.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -3655,7 +3655,7 @@ pub fn skewness(arr: List(Float)) -> Result(Float, Nil) {
 /// linear interpolation between closest ranks.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -3708,7 +3708,7 @@ pub fn percentile(arr: List(Float), n: Int) -> Result(Float, Nil) {
 /// mean and standard deviation.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -3754,7 +3754,7 @@ pub fn zscore(arr: List(Float), ddof: Int) -> Result(List(Float), Nil) {
 /// Calculate the interquartile range (IQR) of the elements in a list.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -3827,7 +3827,7 @@ pub fn interquartile_range(arr: List(Float)) -> Result(Float, Nil) {
 /// \\(\bar{x}\\), \\(\bar{y}\\) are the sample means.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -3917,7 +3917,7 @@ pub fn correlation(arr: List(#(Float, Float))) -> Result(Float, Nil) {
 /// \\(\alpha=\beta=1\\)).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleam/set
@@ -3962,7 +3962,7 @@ pub fn jaccard_index(xset: set.Set(a), yset: set.Set(a)) -> Float {
 /// [Tversky index](#tversky_index) (with \\(\alpha=\beta=0.5\\)).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleam/set
@@ -4010,7 +4010,7 @@ pub fn sorensen_dice_coefficient(xset: set.Set(a), yset: set.Set(a)) -> Float {
 /// The Tversky index does not have a strict upper limit of 1 when \\(\alpha \neq \beta\\).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleam/set
@@ -4079,7 +4079,7 @@ pub fn tversky_index(
 /// between the two sets.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleam/set
@@ -4126,7 +4126,7 @@ pub fn overlap_coefficient(xset: set.Set(a), yset: set.Set(a)) -> Float {
 /// directions, and 0 indicates orthogonality.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -4192,7 +4192,7 @@ pub fn cosine_similarity(arr: List(#(Float, Float))) -> Result(Float, Nil) {
 /// directions, and 0 indicates orthogonality.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -4270,7 +4270,7 @@ pub fn cosine_similarity_with_weights(
 /// values in the respective input lists indexed by \\(i\\).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -4316,7 +4316,7 @@ pub fn canberra_distance(arr: List(#(Float, Float))) -> Result(Float, Nil) {
 /// \\(w_i \in \mathbb{R}_{+}\\) are corresponding positive weights.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -4373,7 +4373,7 @@ pub fn canberra_distance_with_weights(
 /// positive.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -4424,7 +4424,7 @@ pub fn braycurtis_distance(arr: List(#(Float, Float))) -> Result(Float, Nil) {
 /// positive and \\(w_i = 1.0\\;\forall i=1...n\\).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -4480,7 +4480,7 @@ pub fn braycurtis_distance_with_weights(
 ///
 /// `True` is returned if the statement holds, otherwise `False` is returned.
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -4519,7 +4519,7 @@ pub fn is_close(x: Float, y: Float, rtol: Float, atol: Float) -> Bool {
 /// values.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleam/list
@@ -4567,7 +4567,7 @@ pub fn all_close(
 /// otherwise `False` is returned.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// import gleeunit/should
 /// import gleam_community/maths
@@ -4600,7 +4600,7 @@ pub fn is_fractional(x: Float) -> Bool {
 /// and `True` is returned. Otherwise `False` is returned.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -4645,7 +4645,7 @@ pub fn is_power(x: Int, y: Int) -> Bool {
 /// </details>
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -4689,7 +4689,7 @@ pub fn is_perfect(n: Int) -> Bool {
 /// </details>
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -4756,7 +4756,7 @@ fn powmod_with_check(base: Int, exponent: Int, modulus: Int) -> Int {
 /// between two other real numbers, \\(a,b \in \mathbb{R}\\), such that \\(a < x < b\\).
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -4794,7 +4794,7 @@ pub fn is_between(x: Float, lower: Float, upper: Float) -> Bool {
 /// </details>
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -4829,7 +4829,7 @@ pub fn is_divisible(n: Int, d: Int) -> Bool {
 /// </details>
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -4986,7 +4986,7 @@ fn incomplete_gamma_sum(
 /// `increment < 0`, the sequence progresses from `start` towards `stop` in reverse.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -5054,7 +5054,7 @@ fn do_step_range(
 /// to generate a larger-than-usual sequence of elements.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleam/yielder.{Next, Done}
@@ -5113,7 +5113,7 @@ pub fn yield_step_range(
 /// points and whether the endpoint is included determine the spacing between values.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -5187,7 +5187,7 @@ fn do_linear_space(
 /// to generate a larger-than-usual sequence of elements.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleam/yielder.{Next, Done}
@@ -5258,7 +5258,7 @@ pub fn yield_linear_space(
 /// be positive; specifying zero or a negative value will result in an error.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -5318,7 +5318,7 @@ pub fn logarithmic_space(
 /// to generate a larger-than-usual sequence of elements.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleam/yielder.{Next, Done}
@@ -5392,7 +5392,7 @@ pub fn yield_logarithmic_space(
 /// value will result in an error.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleam/yielder
@@ -5448,7 +5448,7 @@ pub fn geometric_space(
 /// to generate a larger-than-usual sequence of elements.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleam/yielder.{Next, Done}
@@ -5498,7 +5498,7 @@ pub fn yield_geometric_space(
 /// is determined by the `radius` argument of the function.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleeunit/should
@@ -5539,7 +5539,7 @@ pub fn symmetric_space(
 /// to generate a larger-than-usual sequence of elements.
 ///
 /// <details>
-/// <summary>Example</summary>
+/// <summary>Examples</summary>
 ///
 /// ```gleam
 /// import gleam/yielder.{Next, Done}
